@@ -20,19 +20,14 @@ class Methods {
             return writeFileAsync("./db.json", JSON.stringify(notes))
         }
         // get the note from db.json
-    getNote() {
+    getNote(notes) {
+        return
+    }
+    addNote(notes) {
 
     }
-
-    addNote() {
-
-    }
-
-    deleteNote() {
+    deleteNote(notes) {
 
     }
-
-
-
 }
 module.exports = new Methods();
