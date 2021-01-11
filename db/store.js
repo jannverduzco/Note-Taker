@@ -18,8 +18,8 @@ class Store {
             return readFileAsync("db/db.json", "utf8")
         }
         // write notes to db.json
-    write() {
-            return writeFileAsync("./db.json", JSON.stringify(notes))
+    write(notes) {
+            return writeFileAsync('db/db.json', JSON.stringify(notes));
         }
         // get the note from db.json
     getNotes() {
@@ -27,10 +27,14 @@ class Store {
             return JSON.parse(notes)
         })
     }
-    addNotes() {
-        return this.write("db.json").then(() => {
-
-        })
+    addNotes(note) {
+        return this.read().then((notes) => {
+            const n = JSON.parse(notes);
+            const newNotes = [...n, note];
+            this.write(newNotes).then(() => {
+                return newNotes;
+            });
+        });
     }
     deleteNotes() {
 
