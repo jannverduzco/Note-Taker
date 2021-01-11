@@ -1,33 +1,35 @@
 // DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
 // ===============================================================================
 const fs = require("fs");
 const util = require("util");
-
+var path = require("path")
 var readFileAsync = util.promisify(fs.readFile);
 var writeFileAsync = util.promisify(fs.writeFile);
 
 const { v4: uuidv4 } = require('uuid');
+const { json } = require("express");
 
 // METHODS
-class Methods {
+class Store {
     // returns what is read form bd.json file
     read() {
-            return readFileAsync("./db.json", "utf8")
+            return readFileAsync("db/db.json", "utf8")
         }
         // write notes to db.json
     write(notes) {
             return writeFileAsync("./db.json", JSON.stringify(notes))
         }
         // get the note from db.json
-    getNote(notes) {
-        return
+    getNotes() {
+        return this.read().then((notes) => {
+            return JSON.parse(notes)
+        })
     }
-    addNote(notes) {
+    addNotes() {
 
     }
-    deleteNote(notes) {
+    deleteNotes() {
 
     }
 }
-module.exports = new Methods();
+module.exports = new Store();

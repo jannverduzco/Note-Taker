@@ -13,6 +13,7 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// lets you traverse the public folder as it was just a static file
 app.use(express.static("public"));
 
 // Allows use to express in these listed files
