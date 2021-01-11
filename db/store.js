@@ -28,8 +28,8 @@ class Store {
         })
     }
     addNotes() {
-        return this.read("db.json").then((allNotes) => {
-            return JSON.parse(allNotes)
+        return this.write("db.json").then(() => {
+
         })
     }
     deleteNotes() {
