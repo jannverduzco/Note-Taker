@@ -5,11 +5,11 @@ const util = require("util");
 var path = require("path")
 var readFileAsync = util.promisify(fs.readFile);
 var writeFileAsync = util.promisify(fs.writeFile);
-
-const { v4: uuidv4 } = require('uuid');
 const { json } = require("express");
+// keeps track of notes id's
+const { v4: uuidv4 } = require('uuid');
 
-var allNotes = [];
+
 
 // METHODS
 class Store {
@@ -30,6 +30,7 @@ class Store {
     addNotes(note) {
         return this.read().then((notes) => {
             const n = JSON.parse(notes);
+            //array containg pushed notes
             const newNotes = [...n, note];
             this.write(newNotes).then(() => {
                 return newNotes;
@@ -37,7 +38,11 @@ class Store {
         });
     }
     deleteNotes() {
-
+        return this.read().then((newNotes) => {
+            this.deleteNotes(newNotes).then(() => {
+                return newNotes;
+            })
+        })
     }
 }
 
