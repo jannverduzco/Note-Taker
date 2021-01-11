@@ -6,7 +6,7 @@ const router = require("express").Router();
 router.get("/notes", function(req, res) {
     store.getNotes().then((notes) => res.json(notes))
 })
-router.post("api/notes", function() {
+router.post("/notes", function() {
     store.addNotes().then((notes) => res.json(notes))
 })
 router.delete("api/notes:id", function() {
