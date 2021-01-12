@@ -10,39 +10,40 @@
 
 
 ## Description 
-This application generates an employee role (Manager, Engineer, Intern), via command line interface. The required fields for all the positions are name, id, email, however, it does get role specific. For manager, it requires office number. For an intern it requires the school and for an engineer, it requires the GitHub user name. 
+The purspose of this application is to help the user stay organized when entering notes. The note requirements are a title and a body. The user is able to save the notes and see the title of the notes on the row to the left. The notes are save in order from oldest(top) to newest(bottom). The user is also able to discart notes listed.
 
 ## User Story
 ```
-As a manager
-I want to generate a webpage that displays my team's basic info
-so that I have quick access to emails and GitHub profiles
+AS A user, I want to be able to write and save notes
+
+I WANT to be able to delete notes I've written before
+
+SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
 
 ## Contributors
 Janneth Alvarado Verduzco - janneth_verduzco@live.com
 
 ## Language/Technologies Used
+* HTML
+* CSS
 * JavaScript
-* Inquirer
 * package.json- NPM package 
+   * Express
+   * UUID
+
 
 
 ## Mock-Up 
 
-### Demo
-[![](Assets/demo.PNG)](https://drive.google.com/file/d/1A_rhoxrHgikzW9PPavcdCmBx-gr86Nei/view)
-
-
+### Prompt Walkthrough
+![GitHub Logo](Images/home.jpg)
 
 ### Prompt Walkthrough
-![GitHub Logo](Assets/run-program.PNG)
-
-### Prompt Walkthrough
-![GitHub Logo](Assets/cli-prompt.PNG)
+![GitHub Logo](Images/NoteEntry.jpg)
 
 ### Successful Written HTML
-![GitHub Logo](Assets/generated-html.PNG)
+![GitHub Logo](Images/listedEntries.jpg)
 
 
 ## Repository Link
