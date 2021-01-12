@@ -38,13 +38,11 @@ class Store {
         });
     }
     deleteNotes() {
-        return this.read().then((newNotes) => {
-            this.deleteNotes(newNotes).then(() => {
-                return newNotes;
-            })
-        })
+        var allNotes = notes.filter(note => note.id !== parseInt(req.params.id));
+        writeToJsonFile(allNotes);
+        notes = allNotes;
+        res.json(true);
     }
 }
-
 
 module.exports = new Store();

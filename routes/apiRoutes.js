@@ -9,7 +9,7 @@ router.get("/notes", function(req, res) {
 router.post('/notes', function(req, res) { 
     store.addNotes(req.body).then((notes) => res.json(notes));
 });
-router.delete("api/notes:id", function(req, res) {
+router.delete("api/notes/:id", function(req, res) {
     store.deleteNotes(req.body).then((notes) => res.json(notes));
 })
 
