@@ -45,7 +45,7 @@ Janneth Alvarado Verduzco - janneth_verduzco@live.com
 ### Successful Written HTML
 ![GitHub Logo](Images/listedEntries.jpg)
 
-## Deployed Link
+## Deployed Link (Heroku)
 
 
 ## Repository Link
