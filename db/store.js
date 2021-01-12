@@ -38,8 +38,7 @@ class Store {
         });
     }
     deleteNotes() {
-        var allNotes = notes.filter(note => note.id !== parseInt(req.params.id));
-        writeToJsonFile(allNotes);
+        var allNotes = newNotes.filter(note => note.id !== parseInt(req.params.id));
         notes = allNotes;
         res.json(true);
     }
