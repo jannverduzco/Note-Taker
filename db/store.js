@@ -28,20 +28,33 @@ class Store {
         })
     }
     addNotes(note) {
+
+        const { title, text } = note;
+        const id = uuidv4();
+        const newNote = { title, text, id };
+        console.log(newNote)
+            // console.log(note)
         return this.read().then((notes) => {
             const n = JSON.parse(notes);
             //array containg pushed notes
-            const newNotes = [...n, note];
+            const newNotes = [...n, newNote];
             this.write(newNotes).then(() => {
                 return newNotes;
             });
         });
     }
-    deleteNotes() {
-        var allNotes = newNotes.filter(note => note.id !== parseInt(req.params.id));
-        notes = allNotes;
-        res.json(true);
+    deleteNotes(id) {
+        return this.getNotes()
+            .then((notes) => {
+                return notes.filter((note) => note.id !== id)
+            })
+
+        .then((filteredNotes) => {
+            console.log(filteredNotes)
+            return this.write(filteredNotes)
+        })
     }
 }
+
 
 module.exports = new Store();

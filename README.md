@@ -46,7 +46,7 @@ Janneth Alvarado Verduzco - janneth_verduzco@live.com
 ![GitHub Logo](Images/listedEntries.jpg)
 
 ## Deployed Link (Heroku)
-
+https://calm-crag-71296.herokuapp.com/
 
 ## Repository Link
 https://github.com/jannverduzco/Team-Template-Generator
